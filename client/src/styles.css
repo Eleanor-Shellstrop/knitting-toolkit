@@ -190,6 +190,10 @@ a:focus-visible {
 input[type='number'] {
   font-variant-numeric: tabular-nums;
 }
+input::placeholder {
+  color: var(--placeholder-text);
+  opacity: 1; /* Firefox dims placeholders by default */
+}
 
 fieldset {
   border: 0;
