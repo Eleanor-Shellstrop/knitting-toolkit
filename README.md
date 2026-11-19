@@ -78,7 +78,7 @@ npm run db:reset     # migrate + seed
 npm run dev          # API on :3001, web on :5173
 ```
 
-Open http://localhost:5173.
+Open http://localhost:5173. Vite serves the app there with hot reload, so Vue and CSS edits show up without refreshing. Port 3001 is only the API in development.
 
 ### Tests
 

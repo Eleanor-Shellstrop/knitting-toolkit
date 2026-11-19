@@ -18,8 +18,10 @@ export function createApp() {
   app.use('/api', (_req, res) => res.status(404).json({ error: 'Not found' }));
 
   // In production, serve the built Vue app from the same origin (single deploy).
+  // In development the app comes from Vite on :5173 (with hot reload), so a
+  // leftover client/dist must not be served here, or you'd see a stale build.
   const dist = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../client/dist');
-  if (existsSync(dist)) {
+  if (process.env.NODE_ENV === 'production' && existsSync(dist)) {
     app.use(express.static(dist));
     app.get('*', (_req, res) => res.sendFile(path.join(dist, 'index.html')));
   }
