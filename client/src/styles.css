@@ -1,26 +1,35 @@
+/*
+ * Palette: mint #c9eddc · taupe #d1c2ba · dusty rose #d99697 · teal #55828b ·
+ * deep teal #3b6064 · peach #ffc099 · espresso #291000.
+ * Text-bearing tokens are darkened/lightened shades of those so every text
+ * pairing meets WCAG AA (≥ 4.5:1) in both themes.
+ */
 :root {
-  --bg: #faf6f0;
+  --bg: #f5f9f7;
   --surface: #ffffff;
-  --surface-2: #f3ece2;
-  --text: #2b2420;
-  --muted: #6b5f57;
-  --border: #e4d9cc;
-  --accent: #8a3b4f;
-  --accent-hover: #73303f;
+  --surface-2: #e8f5ef;
+  --text: #291000;
+  --placeholder-text: #8c8c8c;
+  --muted: #5e4a3f;
+  --border: #d1c2ba;
+  --accent: #3b6064;
+  --accent-hover: #2c4a4d;
   --accent-ink: #ffffff;
-  --accent-soft: #f4e3e7;
-  --gold: #a9803f;
-  --good: #2f7a4b;
-  --good-soft: #e3f1e7;
-  --fair: #9a6210;
-  --fair-soft: #fbefd9;
-  --poor: #b23a32;
-  --poor-soft: #f9e2df;
-  --fiber-animal: #b7684a;
-  --fiber-plant: #6f8f5a;
-  --fiber-synthetic: #5a7392;
-  --fiber-regenerated: #8a6a9a;
-  --shadow: 0 1px 2px rgb(60 40 30 / 0.06), 0 4px 16px rgb(60 40 30 / 0.06);
+  --accent-soft: #c9eddc;
+  --gold: #9c4f50; /* eyebrow text: dusty rose, deepened for contrast */
+  --good: #2e6650;
+  --good-soft: #d9f1e6;
+  /* Status colors step outside the palette a little (amber / red) so "fair"
+     and "poor" stay distinguishable from each other. */
+  --fair: #7d5a00;
+  --fair-soft: #ffefd0;
+  --poor: #a8343a;
+  --poor-soft: #f7e0e0;
+  --fiber-animal: #d99697;
+  --fiber-plant: #7fb8a0;
+  --fiber-synthetic: #55828b;
+  --fiber-regenerated: #ffc099;
+  --shadow: 0 1px 2px rgb(41 16 0 / 0.06), 0 4px 16px rgb(41 16 0 / 0.07);
   --radius: 14px;
   --radius-sm: 8px;
   --font-display: 'Fraunces', Georgia, serif;
@@ -30,27 +39,30 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --bg: #1b1715;
-    --surface: #24201d;
-    --surface-2: #2e2825;
-    --text: #f1e9e0;
-    --muted: #b3a69a;
-    --border: #3d3531;
-    --accent: #e48ca2;
-    --accent-hover: #f0a6b8;
-    --accent-ink: #1b1715;
-    --accent-soft: #3a2429;
-    --gold: #d6b278;
-    --good: #7fcf98;
-    --good-soft: #1f3326;
-    --fair: #e9b35c;
-    --fair-soft: #3a2e1b;
-    --poor: #f0897f;
-    --poor-soft: #3d2220;
-    --fiber-animal: #d88a6b;
-    --fiber-plant: #93b37d;
-    --fiber-synthetic: #84a0c2;
-    --fiber-regenerated: #b496c4;
+    /* Built on deep teal #3b6064: the page is the teal itself, and cards and
+       inputs sit in progressively deeper teal wells. */
+    --bg: #182c2e;
+    --surface: #3c6267;
+    --surface-2: #264245;
+    --text: #f4fbf8;
+    --placeholder-text: #c1c1c1;
+    --muted: #cfe2dc;
+    --border: #55828b;
+    --accent: #c9eddc;
+    --accent-hover: #e3f7ee;
+    --accent-ink: #1d3335;
+    --accent-soft: #1f3a3c;
+    --gold: #ffd4b8;
+    --good: #b9ecd4;
+    --good-soft: #1f3d36;
+    --fair: #f6d27e;
+    --fair-soft: #3d3a22;
+    --poor: #ffc4c6;
+    --poor-soft: #4a2f36;
+    --fiber-animal: #d99697;
+    --fiber-plant: #9fd9bf;
+    --fiber-synthetic: #7fa9b1;
+    --fiber-regenerated: #ffc099;
     --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 16px rgb(0 0 0 / 0.25);
     color-scheme: dark;
   }
@@ -121,7 +133,7 @@ a:hover {
 }
 
 .page {
-  padding: 32px 0 64px;
+  padding: 32px 20px 64px;
 }
 
 .lede {

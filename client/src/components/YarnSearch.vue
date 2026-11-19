@@ -63,6 +63,9 @@ onMounted(() => yarns.search(text.value));
   border-radius: 999px;
   width: auto;
 }
+input::placeholder {
+  color: var(--placeholder-text);
+}
 @media (max-width: 520px) {
   .search {
     grid-template-columns: 1fr;
