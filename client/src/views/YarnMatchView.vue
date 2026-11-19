@@ -35,8 +35,12 @@ const gaugeText = (y) => (y.gauge_min === y.gauge_max ? `${y.gauge_min}` : `${y.
             <strong>{{ y.name }}</strong>
           </div>
           <div class="meta small muted">
-            {{ y.weight_name }} ({{ y.weight_common_names.split(',')[0] }}) · {{ gaugeText(y) }} sts / 4" ·
-            {{ y.yards_per_skein }} yds / {{ y.grams_per_skein }} g
+            {{ y.weight_name }} ({{ y.weight_common_names.split(',')[0] }}) 
+          </div>
+          <div class="gauge-and-grams">
+            <div>{{ gaugeText(y) }} sts / 4" </div>
+            <div style="color: var(--symbol);">✤</div>
+            <div>{{ y.yards_per_skein }} yds / {{ y.grams_per_skein }} g</div>
           </div>
           <FiberBar :fibers="y.fibers" compact />
           <div class="row">
@@ -97,6 +101,11 @@ const gaugeText = (y) => (y.gauge_min === y.gauge_max ? `${y.gauge_min}` : `${y.
   display: flex;
   flex-wrap: wrap;
   gap: 6px 12px;
+  justify-content: space-between;
+  align-items: center;
+}
+.gauge-and-grams {
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }

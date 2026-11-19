@@ -10,6 +10,7 @@
   --surface-2: #e8f5ef;
   --text: #291000;
   --placeholder-text: #8c8c8c;
+  --symbol: #dcca9f;
   --muted: #5e4a3f;
   --border: #d1c2ba;
   --accent: #3b6064;
@@ -46,6 +47,7 @@
     --surface-2: #264245;
     --text: #f4fbf8;
     --placeholder-text: #c1c1c1;
+    --symbol: #dcca9f;
     --muted: #cfe2dc;
     --border: #55828b;
     --accent: #c9eddc;
